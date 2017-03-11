@@ -26,8 +26,7 @@
  *
  *
  * Final Notes:
- * This is a really ugly task. I doubt that there is someone that could possibly
- * max these questions out. That aside, if i'd have red the questions more
+ * This is a really ugly task. That aside, if i'd have red the questions more
  * carefully i probably could have finished with one of the questions in time.
  *
  * To code and test this program it took me about 4-5 hours, in my usual linux &
