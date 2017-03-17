@@ -36,6 +36,8 @@
  * i've forgot form the paper,
  * BUT it still took me more time to finish this than what was available, well
  * i'm not a competitive programmer :'D
+ * EDIT: Actually this task looks like a medium difficulty if i try to compare it to the ones on HackerRank
+ * Oh well i'm dumb :'D
  *
  * Well i'm a bit sad :(
  *
