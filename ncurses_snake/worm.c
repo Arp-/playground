@@ -13,11 +13,11 @@ static heading_t movement_vec[][3] = {
 };
 //-----------------------------------------------------------------------------//
 // PRIVATE FUNCTIONS //
-static worm_t* worm_get_tail(const worm_t* w) {
+static const worm_t* worm_get_tail(const worm_t* w) {
 	while (w->prev_ != NULL) {
 		w = w->prev_;
 	}
-	return (worm_t*)w;
+	return w;
 }
 //-----------------------------------------------------------------------------//
 static worm_t* worm_get_head(worm_t* w) {
@@ -73,7 +73,10 @@ size_t worm_length(const worm_t* worm) {
 //-----------------------------------------------------------------------------//
 worm_t* worm_move(worm_t* worm, direction_t way) {
 	worm_t* head = worm_get_head(worm);
-	worm_t* tail = worm_get_tail(worm); // new head
+
+	// use "trust me i'm an enginner cast" on the new head, becase i'm unfamilliar
+	// with c-s const correctness
+	worm_t* tail = (worm_t*)worm_get_tail(worm);
 	worm_t* new_tail = tail->next_;
 
 	new_tail->prev_ = NULL;
@@ -88,13 +91,13 @@ worm_t* worm_move(worm_t* worm, direction_t way) {
 worm_t* worm_eat(worm_t* worm) {
 	// we just append a node at the end
 	worm_t* curr_tail = worm;
-	curr_tail = worm_get_tail(worm);
+	curr_tail = (worm_t*)worm_get_tail(worm);
 	curr_tail->prev_ = worm_new(NULL, curr_tail, 
 			curr_tail->pos_x_ - WORM_BLOCK_W,
 			curr_tail->pos_y_ - WORM_BLOCK_H,
 			0);
 	// NOTE i generally did the set choordinates, to set the next block not the
-	// previous, but if i set the choords using zero invert it and add the correct
+	// previous, but if i set the choords using zero, invert it and add the correct
 	// choord i should be there
 	worm_t* t = curr_tail->prev_;
 	set_choordinates_next_to(curr_tail->prev_, 0, 0);
