@@ -58,6 +58,6 @@ worm_t* worm_eat(worm_t*);
 /**
  * frees the whole list
  */
-worm_t* worm_destruct(worm_t*);
+void worm_destruct(worm_t*);
 
 #endif // WORM_WORM_H

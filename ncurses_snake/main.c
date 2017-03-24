@@ -152,6 +152,7 @@ int main() {
 	}
 
 
+	worm_destruct(w);
 	print_game_over();
 	refresh();
 	sleep(1);

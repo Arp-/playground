@@ -106,5 +106,13 @@ worm_t* worm_eat(worm_t* worm) {
 
 	return worm;
 }
-
+//-----------------------------------------------------------------------------//
+void worm_destruct(worm_t* w) {
+	w = (worm_t*)worm_get_head(w);
+	while (w->prev_ != NULL) {
+		w = w->prev_;
+		free(w->next_);
+	}
+	free(w);
+}
 
