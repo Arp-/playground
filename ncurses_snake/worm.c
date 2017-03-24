@@ -95,7 +95,7 @@ worm_t* worm_eat(worm_t* worm) {
 	curr_tail->prev_ = worm_new(NULL, curr_tail, 
 			curr_tail->pos_x_ - WORM_BLOCK_W,
 			curr_tail->pos_y_ - WORM_BLOCK_H,
-			0);
+			curr_tail->heading_);
 	// NOTE i generally did the set choordinates, to set the next block not the
 	// previous, but if i set the choords using zero, invert it and add the correct
 	// choord i should be there

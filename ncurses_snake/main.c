@@ -95,7 +95,7 @@ static bool worm_self_hit_check(const worm_t* w) {
 }
 //-----------------------------------------------------------------------------//
 void print_game_over() {
-
+	// TODO make some ascii art ??? // or copy some from somewhere
 }
 //-----------------------------------------------------------------------------//
 int main() {
@@ -110,7 +110,8 @@ int main() {
 	printw("h: %d | w: %d\n", height, width);
 
 
-	worm_t* w = worm_make(10, 10, NORTH);
+
+	worm_t* w = worm_make(width/2,height/2, SOUTH);
 	w = worm_eat(w);
 	w = worm_eat(w);
 
