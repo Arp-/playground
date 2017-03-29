@@ -128,6 +128,14 @@ int main() {
 		int prev_x = tail->pos_x_;
 		int prev_y = tail->pos_y_;
 		int move = getch();
+		// PASUE
+		if (move == 'p') {
+			move = 0;
+			while (move != 'p') {
+				move = getch();
+			}
+		}
+		// MOVE
 		if (move == 'h') {
 			w = worm_move(w, LEFT);
 		} else if (move == 'l') {
